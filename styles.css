@@ -43,8 +43,8 @@ ul {
 
 li {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Position name and button on opposite sides */
+    align-items: center; /* Align items vertically */
     padding: 15px;
     border-bottom: 1px solid #d6b52a;
 }
@@ -54,10 +54,12 @@ li:last-child {
 }
 
 button {
+    width: 70px; /* Fixed width for consistency */
+    text-align: center;
     background-color: #d6b52a;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 0;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -77,16 +79,20 @@ audio {
     margin-top: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     h1 {
         font-size: 2em;
         margin-bottom: 15px;
     }
 
+    li {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align to the start */
+    }
+
     button {
-        width: 100%;
-        margin-top: 10px;
-        padding: 12px;
+        width: 100%; /* Full width button for better usability */
+        margin-top: 10px; /* Add space between name and button */
         font-size: 1em;
     }
 
